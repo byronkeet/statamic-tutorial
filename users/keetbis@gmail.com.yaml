@@ -2,3 +2,7 @@ name: 'Byron Keet'
 super: true
 id: ec5dc7c0-50fa-4423-8edf-a348afa0e863
 password_hash: $2y$10$KhRO9tEmnPmcqqUXeuFgYOm7oUzOICEuF9TLcxWmNqkO9PNchM4dy
+preferences:
+  collections:
+    pages:
+      after_save: continue_editing

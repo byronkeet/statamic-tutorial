@@ -1,7 +1,16 @@
 @import "tailwindcss/base";
 
-@import "site";
-
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+@import "./site.css";
+
+.hero {
+	    p {
+        @apply text-[32px] tracking-tight leading-tight text-gray-500;
+        strong {
+            @apply font-bold text-white;
+        }
+    }
+}
