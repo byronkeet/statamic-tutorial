@@ -63,14 +63,11 @@ return [
     | Pagination
     |--------------------------------------------------------------------------
     |
-    | Here you may define the default pagination size as well as the options
-    | the user can select on any paginated listing in the Control Panel.
+    | The numbers of items to show on each paginated page.
     |
     */
 
     'pagination_size' => 50,
-
-    'pagination_size_options' => [10, 25, 50, 100, 500],
 
     /*
     |--------------------------------------------------------------------------
