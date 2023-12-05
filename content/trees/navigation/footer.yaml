@@ -1,0 +1,16 @@
+tree:
+  -
+    id: cf4aad90-fea8-42a2-816a-3250cb6905c0
+    title: 'Cool things'
+    url: 'https://google.com'
+    data:
+      external: true
+  -
+    id: b07814de-5476-48cd-bf96-7c8990c2be4a
+    title: 'Cool CMS'
+    url: 'https://statamic.com'
+    data:
+      external: true
+  -
+    id: d37f86ff-5071-4a09-bc45-5567a65ecf0d
+    entry: 6fd4f73a-5a75-4df4-a8b1-3e50c6f957f3
