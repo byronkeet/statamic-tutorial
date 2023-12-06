@@ -1,0 +1,99 @@
+---
+string: Hello sandbox! I am a single line string.
+bool: false
+int: 6
+y2k: 2000-01-01
+listing:
+  - Ryu
+  - Ken
+  - Guile
+fighters:
+  - { name: Bruce lee, style: Jeet Kune Do }
+  - { name: Chuck Norris, style: Tang Soo Do }
+dreamers:
+  - { name: Martin Luther King, Jr., dream: I have a dream }
+other: salad
+address:
+  street: 123 Main St.
+  city: Anytown
+  state: CA
+  zip: 90210
+---
+
+{{ missing ?? still_missing ?? view:string }}
+<br>
+{{ view:listing }}
+	{{ value }}<br>
+{{ /view:listing }}
+<br>
+{{ view:fighters }}
+	{{ if next:name == "Chuck Norris"}}Chuck is next!<br><br>{{ /if }}
+	{{ if prev:name == "Bruce lee"}}Bruce is last!<br><br>{{ /if }}
+	{{ name }} does {{ style }}<br>
+{{ /view:fighters }}
+or
+{{ view:fighters:0:style }}
+<br>
+<br>
+{{ view:address }}
+	{{ street }}<br>
+	{{ city }}, {{ state }} {{ zip }}<br>
+{{ /view:address }}
+or
+{{ view:address:state }}
+
+<br>
+<br>
+<br>
+
+{{ hello = "hello" }}
+{{ hello }}
+<br>
+<br>
+{{ hello = hello + " world!" }}
+{{ hello }}
+<br>
+<br>
+{{ var = [ "one", "two", "three" ] }}
+{{ var }}
+	{{ value }}
+{{ /var}}
+<br>
+<br>
+{{ people = view:dreamers merge view:fighters }}
+	{{ name }} does {{ style }}<br>
+{{ /people }}
+
+<br>
+<br>
+
+{{ if view:bool }}
+	its true!
+{{ else }}
+	its false!
+{{ /if }}
+<br>
+<br>
+{{ unless view:bool }}Its false!{{ /unless }}
+<br>
+<br>
+{{ view:bool ? 'its true!' : 'its false!' }}
+<br>
+<br>
+{{ view:bool ?= 'its true!' }}
+<br>
+<br>
+{{ view:bool ?= {partial:footer} }}
+<br>
+<br>
+{{ if view:int > 2 }}Its more than just a couple!{{ /if }}
+<br>
+<br>
+{{ if (view:int < 5 && view:bool) || view:other === "salad" }}Its more than just a couple!{{ /if }}
+
+<br>
+<br>
+
+{{ collection:news  limit="5" sort="date" }}
+	{{ title }}<br>
+{{ /collection:news }}
